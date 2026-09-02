@@ -1,54 +1,30 @@
-ECE-2112-PA-2"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "01a35638-f868-4233-a354-f0effdbb18d1",
-   "metadata": {},
-   "source": [
-    "##### Villanueva, Elle Sandrine P.  |  2ECE-C  |  Date Submitted: August 27, 2026"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 1,
-   "id": "0da61c9b-e9f0-45b5-9c62-a02f2d05badb",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import numpy as np"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "4ff2076d-d6ec-4cb9-94dd-a48d2830d8ba",
-   "metadata": {},
-   "source": [
-    "## A. Reproducible Normalization Problem"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 2,
-   "id": "a8dd0e3d-7799-42fb-9a19-835fb8034c18",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "array([[48, 11, 15, 67, 21],\n",
-       "       [11, 41, 13, 66, 24],\n",
-       "       [71, 79, 53, 67, 70],\n",
-       "       [77, 35, 91, 19, 96],\n",
-       "       [35, 54, 37, 41, 17]], dtype=int32)"
-      ]
-     },
-     "execution_count": 2,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
+# ECE-2112-PA-2
+##### Villanueva, Elle Sandrine P.  |  2ECE-C  |  Date Submitted: August 27, 2026
+
+This document contains Programming Assignment 2 for the course Advanced Computer Programming, S.Y. 2026-2027. The objectives are to: 
+
+1. Create and reshape NumPy arrays using NumPy functions;
+2. Perform vectorized numerical operations on an ndarray;
+3. Compute array statistics and use Boolean conditions to select elements; and
+4. Save computed NumPy arrays as .npy files.
+
+## A. Reproducible Normalization Problem
+``import numpy as np``
+
+```
+np.random.seed(2112)
+X = np.random.randint(10, 101, size=(5, 5))
+X
+```
+
+```
+array([[48, 11, 15, 67, 21],
+      [11, 41, 13, 66, 24],
+      [71, 79, 53, 67, 70],
+      [77, 35, 91, 19, 96],
+      [35, 54, 37, 41, 17]], dtype=int32)
+```
+
     "np.random.seed(2112)\n",
     "X = np.random.randint(10, 101, size=(5, 5))\n",
     "X"

@@ -1,5 +1,5 @@
 # ECE-2112-PA-2
-##### Villanueva, Elle Sandrine P.  |  2ECE-C  |  Date Submitted: August 27, 2026
+##### Villanueva, Elle Sandrine P.  |  2ECE-C  |  Date Submitted: September 3, 2026
 
 This document contains Programming Assignment 2 for the course Advanced Computer Programming, S.Y. 2026-2027. The objectives are to: 
 
@@ -25,183 +25,67 @@ array([[48, 11, 15, 67, 21],
       [35, 54, 37, 41, 17]], dtype=int32)
 ```
 
-    "np.random.seed(2112)\n",
-    "X = np.random.randint(10, 101, size=(5, 5))\n",
-    "X"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 3,
-   "id": "6c4551e3-a48c-4c4b-9d12-e2ec51821028",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "np.float64(46.36)"
-      ]
-     },
-     "execution_count": 3,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "mean = np.mean(X)\n",
-    "mean"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "id": "5422bc32-370a-4595-8e77-563e42929ed7",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "np.float64(25.864075471588002)"
-      ]
-     },
-     "execution_count": 4,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "standard_deviation = np.std(X)\n",
-    "standard_deviation"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 5,
-   "id": "b207bb23-4b9c-4b0c-ae40-b62d5c3bee5e",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "array([[ 0.06340841, -1.36714726, -1.2124926 ,  0.79801809, -0.98051059],\n",
-       "       [-1.36714726, -0.20723725, -1.28981993,  0.75935442, -0.86451959],\n",
-       "       [ 0.95267275,  1.26198209,  0.25672675,  0.79801809,  0.91400909],\n",
-       "       [ 1.18465476, -0.43921926,  1.72594609, -1.05783793,  1.91926443],\n",
-       "       [-0.43921926,  0.29539042, -0.36189192, -0.20723725, -1.13516526]])"
-      ]
-     },
-     "execution_count": 5,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "x_normalized = (X - mean) / standard_deviation\n",
-    "x_normalized"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 6,
-   "id": "3ebf5511-62b1-4fa8-9e15-8363548eeb5e",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "np.float64(0.0)"
-      ]
-     },
-     "execution_count": 6,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "np.mean(x_normalized)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 7,
-   "id": "cbeab57e-c4d1-44f7-9801-f60201a9a499",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "np.float64(0.9999999999999999)"
-      ]
-     },
-     "execution_count": 7,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "np.std(x_normalized)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "a94d8771-01e4-446c-ae0d-42671cac8def",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "np.save(\"X_normalized.npy\", x_normalized)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "4c950ed0-8413-4969-b8e7-dc63adc248e6",
-   "metadata": {},
-   "source": [
-    "# B. Cubes Divisible By 4 Problem"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 9,
-   "id": "bfe02d3d-b40c-4b62-ae9e-a3a08f430527",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "array([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,\n",
-       "        14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,\n",
-       "        27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,\n",
-       "        40,  41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,\n",
-       "        53,  54,  55,  56,  57,  58,  59,  60,  61,  62,  63,  64,  65,\n",
-       "        66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,  78,\n",
-       "        79,  80,  81,  82,  83,  84,  85,  86,  87,  88,  89,  90,  91,\n",
-       "        92,  93,  94,  95,  96,  97,  98,  99, 100])"
-      ]
-     },
-     "execution_count": 9,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "C = np.arange(1,101,1)\n",
-    "C"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 10,
-   "id": "10afca25-988a-49f4-99ed-e8c19ada82f6",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "array([      1,       8,      27,      64,     125,     216,     343,\n",
-       "           512,     729,    1000,    1331,    1728,    2197,    2744,\n",
-       "          3375,    4096,    4913,    5832,    6859,    8000,    9261,\n",
-       "         10648,   12167,   13824,   15625,   17576,   19683,   21952,\n",
+```
+mean = np.mean(X)
+mean
+```
+
+``np.float64(46.46``
+
+```
+standard_deviation = np.std(X)
+standard_deviation
+```
+
+``np.float64(25.864075471588002)
+``
+
+```
+x_normalized = (X - mean) / standard_deviation\n",
+x_normalized
+```
+
+```
+array([[ 0.06340841, -1.36714726, -1.2124926 ,  0.79801809, -0.98051059],
+       [-1.36714726, -0.20723725, -1.28981993,  0.75935442, -0.86451959],
+       [ 0.95267275,  1.26198209,  0.25672675,  0.79801809,  0.91400909],
+       [ 1.18465476, -0.43921926,  1.72594609, -1.05783793,  1.91926443],
+       [-0.43921926,  0.29539042, -0.36189192, -0.20723725, -1.13516526]])
+```
+
+``np.mean(x_normalized)``
+
+``np.float64(0.0)``
+
+``np.std(x_normalized)``
+ 
+``np.float64(0.9999999999999999)``
+
+``np.save(\"X_normalized.npy\", x_normalized)``
+
+## B. Cubes Divisible By 4 Problem"
+
+```
+C = np.arange(1,101,1)
+C
+```
+
+```
+array([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,
+      14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,
+      27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,
+      40,  41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,
+      53,  54,  55,  56,  57,  58,  59,  60,  61,  62,  63,  64,  65,
+      66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,  78,
+      79,  80,  81,  82,  83,  84,  85,  86,  87,  88,  89,  90,  91,
+      92,  93,  94,  95,  96,  97,  98,  99, 100])
+```
+
+```
+array([      1,       8,      27,      64,     125,     216,     343,\n",
+      512,     729,    1000,    1331,    1728,    2197,    2744,\n",
+      3375,    4096,    4913,    5832,    6859,    8000,    9261,\n",
+      10648,   12167,   13824,   15625,   17576,   19683,   21952,\n",
        "         24389,   27000,   29791,   32768,   35937,   39304,   42875,\n",
        "         46656,   50653,   54872,   59319,   64000,   68921,   74088,\n",
        "         79507,   85184,   91125,   97336,  103823,  110592,  117649,\n",
@@ -212,7 +96,9 @@ array([[48, 11, 15, 67, 21],
        "        474552,  493039,  512000,  531441,  551368,  571787,  592704,\n",
        "        614125,  636056,  658503,  681472,  704969,  729000,  753571,\n",
        "        778688,  804357,  830584,  857375,  884736,  912673,  941192,\n",
-       "        970299, 1000000])"
+       "        970299, 1000000])
+```
+
       ]
      },
      "execution_count": 10,
